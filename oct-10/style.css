@@ -1,0 +1,111 @@
+
+
+#main{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    justify-content: space-between;
+}
+
+#main>div{
+    display: grid;
+}
+
+#main>div>img{
+    width: 90%;
+   margin: auto;
+}
+
+#mid{
+  
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    
+   
+}
+
+.H2{
+    width: 30%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   text-align: center;
+}
+
+#mid>div{
+   display: grid;
+    background-color: yellow;
+  padding: 30px;
+  text-align: left;
+}
+
+#mid>div>img{
+    width: 50%;
+    margin: auto;
+}
+
+#bot{
+  
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    
+   text-align: center;
+}
+
+#bot>div>img{
+    width: 100%;
+}
+
+/* Medium screens */
+@media all and (min-width: 451px) and (max-width: 769px) {
+    
+#main{
+    text-align: center;
+    display: block;
+}
+
+#mid{
+    grid-template-columns: repeat(2,1fr);
+ 
+}
+
+.H2{
+    width: 50%;
+    
+}
+
+#bot{
+    grid-template-columns: repeat(2,1fr);
+ 
+}
+}
+
+/* Small screens */
+@media all and (min-width: 100px) and (max-width: 450px) {
+    #main{
+        text-align: center;
+        display: block;
+    }
+    
+    #mid{
+        grid-template-columns: repeat(1,1fr);
+     
+    }
+    
+    .H2{
+        width: 60%;
+        
+    }
+    
+    #bot{
+        grid-template-columns: repeat(1,1fr);
+     
+    }
+}
