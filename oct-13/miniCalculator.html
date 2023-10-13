@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><input id="first" type="number" placeholder="Enter 1st number" />
+        <input id="second" type="number" placeholder="Enter 2st number" />
+    </div>
+
+
+    <div>
+        <button onclick="add()">add</button>
+        <button onclick="sub()">Subtract</button>
+        <button onclick="mul()">Multiply</button>
+        <button onclick="div()">Divide</button>
+    </div>
+
+    <h3 id="ans"></h3>
+
+
+</body>
+
+</html>
+
+
+<script>
+function add(){
+    
+    let additoin= +(document.getElementById("first").value) + +(document.getElementById("second").value)
+    document.getElementById("ans").innerText = "ans:"+additoin
+}
+
+function sub(){
+    
+    let subtrstion= +(document.getElementById("first").value) - +(document.getElementById("second").value)
+    document.getElementById("ans").innerText = "ans:"+subtrstion
+}
+
+function mul(){
+    
+    let Multiply= +(document.getElementById("first").value) * +(document.getElementById("second").value)
+    document.getElementById("ans").innerText = "ans:"+Multiply
+}
+
+function div(){
+    
+    let Divide= +(document.getElementById("first").value) / +(document.getElementById("second").value)
+    document.getElementById("ans").innerText = "ans:"+Divide
+}
+</script>
