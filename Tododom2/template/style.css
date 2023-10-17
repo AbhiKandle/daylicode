@@ -1,0 +1,36 @@
+#create{
+    
+    height: auto;
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 20px;
+    padding: 10px;
+
+}
+
+#create>h1{
+    text-align: center;
+}
+
+form{
+    width: 80%;
+    margin: auto;
+}
+
+input[type="text"],input[type="number"],input[type="submit"] ,select{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    margin: 10px;
+    
+
+}
+
+table{
+    width: 80%;
+    margin: auto;
+}
+
+thead{
+    background-color: yellow;
+}
