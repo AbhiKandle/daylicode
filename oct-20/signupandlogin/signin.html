@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+        text-align: center;
+     }
+
+      div{
+       
+        height: auto;
+        width: 500px;
+        padding: 20px;
+      border-radius: 20px;
+        margin: auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-top: 75px;
+      }
+
+      input[type="text"],input[type="email"],input[type="number"],input[type="password"]{
+        padding: 15px;
+        padding-right: 320px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        border: 1px solid gray;
+      }
+
+      button{
+        
+        padding-left: 220px;
+        padding-right: 230px; 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+       border-radius: 10px;
+       border: none;
+       background-color: blue;
+       color: white;
+    font-size: large;
+      }
+
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h2>signin</h2>
+
+        <form>
+
+
+            <label for="lgemail">Email address</address></label><br />
+            <input id="lgemail" type="email" placeholder="Enter email address" /><br>
+            <label for="lgpass">Nem password</label><br />
+            <input id="lgpass" type="password" placeholder="Enter password" /><br>
+            <button id="signin">signin</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+document.querySelector("form").addEventListener("submit", lgfun);
+
+function lgfun(event){
+    event.preventDefault()
+    let lgemail = document.querySelector("#lgemail").value;
+   
+   let lgpassword = document.querySelector("#lgpass").value;
+    
+
+    if(lgemail ===  localStorage.getItem("email") && lgpassword === localStorage.getItem("password")){
+alert("login success")
+    }else{
+        alert("login fail")
+    }
+}
+
+
+</script>

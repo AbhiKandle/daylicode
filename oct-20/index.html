@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Likes:<span></span></likes:span></h1>
+    <h2>dislike:<span></span></h2>
+    <button id="like">Like</button>
+    <button id="dislike">Dislike</button>
+  </body>
+</html>
+<script>
+document.querySelector("#like").addEventListener("click",likecount)
+let count=localStorage.getItem("like") || 0;
+document.querySelector("h1>span").innerText=count
+
+function likecount(){
+count++;
+document.querySelector("h1>span").innerText=count
+
+localStorage.setItem("like",count)
+
+}
+
+document.querySelector("#dislike").addEventListener("click",dislikecount)
+let dislikes=localStorage.getItem("dislike") || 0;
+document.querySelector("h2>span").innerText=dislikes
+
+function dislikecount(){
+    dislikes++;
+document.querySelector("h2>span").innerText=dislikes
+
+localStorage.setItem("dislike",dislikes)
+
+}
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      div {
+        height: auto;
+        width: 500px;
+        padding: 20px;
+        border-radius: 20px;
+        margin: auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"] {
+        padding: 15px;
+        padding-right: 320px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        border: 1px solid gray;
+      }
+
+      button {
+        padding-left: 220px;
+        padding-right: 230px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: blue;
+        color: white;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>signup and login</h1>
+    <div>
+      <h2>signup</h2>
+
+      <form>
+        <label for="name">Full Name</label><br />
+        <input id="name" type="text" placeholder="Enter full name" /><br />
+        <label for="email">Email address</label><br />
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter email address"
+        /><br />
+        <label for="no">Phone Number</label><br />
+        <input id="no" type="number" placeholder="Enter your number" /><br />
+        <label for="pass">Nem password</label><br />
+        <input id="pass" type="password" placeholder="Enter password" /><br />
+        <button id="signup">signup</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", myfun);
+
+  function myfun(event) {
+    event.preventDefault();
+    let name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let number = document.querySelector("#no").value;
+    let password = document.querySelector("#pass").value;
+
+    if (name == "" || email == "" || number == "" || password == "") {
+      alert("plz enter valid information");
+    } else {
+      localStorage.setItem("name", name);
+
+      localStorage.setItem("email", email);
+
+      localStorage.setItem("number", number);
+
+      localStorage.setItem("password", password);
+
+      document.querySelector("#signup").addEventListener("click", SignUp);
+    }
+  }
+
+  function SignUp() {
+    window.location.href = "signin.html";
+  }
+</script>
