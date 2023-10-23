@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>womans section</title>
+    <style>
+      #nav {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      #cart {
+        text-decoration: none;
+      }
+
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      #container > div {
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+          rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      #container > div > img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <span>
+        <a id="cart" href="men.html"><p>mens section</p></a>
+      </span>
+      <span>
+        <a id="cart" href="womans.html"><p>womans section</p></a>
+      </span>
+      <span>
+        <a id="cart" href="cart.html"><p>Go to cart</p></a>
+      </span>
+    </div>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  let womansdata = [
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK PRINT LEGGINGS ",
+      price: 1549,
+      strikedoffprice: 1799,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK POLYTIGHT",
+      price: 1249,
+      strikedoffprice: 1749,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK SLEEVE TEE",
+      price: 699,
+      strikedoffprice: 1245,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK CLASSIC LEGGINGS",
+      price: 1399,
+      strikedoffprice: 2799,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK CLASSIC TIGHTS",
+      price: 1099,
+      strikedoffprice: 1249,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "UNISEX REEBOK SHOW SHOES",
+      price: 1249,
+      strikedoffprice: 1489,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S CLASSIC REEBOK PANTS",
+      price: 1459,
+      strikedoffprice: 1235,
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/i/j/r/s-wk-250-jikonet-original-imaggkpfuhjmg7f3.jpeg?q=70",
+      name: "WOMEN'S REEBOK RUNNING RUN ESSENTIALS SHORT SLEEVE GRAPHIC",
+      price: 849,
+      strikedoffprice: 2599,
+    },
+  ];
+
+  womansdata.forEach(function (el) {
+    let divF = document.createElement("div");
+    // img block
+    let image = document.createElement("img");
+    image.src = el.image_url;
+    // name of brand
+    let name = document.createElement("h3");
+    name.innerText = el.name;
+    // price block
+    let price = document.createElement("p");
+    price.innerText = el.price;
+    // addto cart button
+    let button = document.createElement("button");
+    button.innerText = "Add to Cart";
+    button.addEventListener("click", function () {
+      tocart(el);
+    });
+
+    divF.append(image, name, price, button);
+    document.querySelector("#container").append(divF);
+  });
+  let cart = JSON.parse(localStorage.getItem("womansproduct")) || [];
+  function tocart(el) {
+    cart.push(el);
+    localStorage.setItem("womansproduct", JSON.stringify(cart));
+  }
+</script>

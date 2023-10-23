@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <style>
+      #nav {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      #cart {
+        text-decoration: none;
+      }
+
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      #container > div {
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+          rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      #container > div > img {
+        width: 100%;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <span>
+        <a id="cart" href="men.html"><p>mens section</p></a>
+      </span>
+      <span>
+        <a id="cart" href="womans.html"><p>womans section</p></a>
+      </span>
+      <span>
+        <a id="cart" href="cart.html"><p>Go to cart</p></a>
+      </span>
+    </div>
+
+    <div id="container"></div>
+    <h1>total price: <span></span></h1>
+    <h2>total items: <span></span></h2>
+  </body>
+</html>
+
+<script>
+  let cartData = JSON.parse(localStorage.getItem("product"));
+  let womansdata = JSON.parse(localStorage.getItem("womansproduct"));
+  //   cartData.push(JSON.parse(localStorage.getItem("womansproduct")));
+
+  let totalmans = cartData.reduce(function (acc, el) {
+    return acc + +el.price;
+  }, 0);
+
+  let totalwomens = womansdata.reduce(function (acc, el) {
+    return acc + +el.price;
+  }, 0);
+
+  document.querySelector("h1>span").innerText = totalmans + totalwomens;
+  document.querySelector("h2>span").innerText =
+    cartData.length + womansdata.length;
+
+  cartData.forEach(function (el) {
+    let divF = document.createElement("div");
+    // img block
+    let image = document.createElement("img");
+    image.src = el.image_url;
+    // name of brand
+    let name = document.createElement("h3");
+    name.innerText = el.name;
+    // price block
+    let price = document.createElement("p");
+    price.innerText = el.price;
+
+    divF.append(image, name, price);
+    document.querySelector("#container").append(divF);
+  });
+
+  womansdata.forEach(function (el) {
+    let divF = document.createElement("div");
+    // img block
+    let image = document.createElement("img");
+    image.src = el.image_url;
+    // name of brand
+    let name = document.createElement("h3");
+    name.innerText = el.name;
+    // price block
+    let price = document.createElement("p");
+    price.innerText = el.price;
+
+    divF.append(image, name, price);
+    document.querySelector("#container").append(divF);
+  });
+</script>
