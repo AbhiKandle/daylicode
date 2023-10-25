@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <select name="salary" id="salary" onchange="myfun()">
+      <option value="sortbysalsry">sort by salsry</option>
+      <option value="lowTOhigh">low TO high</option>
+      <option value="highTolow">high To low</option>
+    </select>
+
+    <select name="role" id="role" onchange="byRole()">
+      <option value="FSD">FSD</option>
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+    </select>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    let bookmarkData = JSON.parse(localStorage.getItem("mark")) || [];
+    let Table = JSON.parse(localStorage.getItem("jobapplied"));
+    B(Table);
+
+    function myfun() {
+      let selects = document.querySelector("#salary").value;
+
+      if (selects == "lowTOhigh") {
+        Table.sort(function (a, b) {
+          return a.person_salary - b.person_salary;
+        });
+
+        B(Table);
+      }
+
+      if (selects == "highTolow") {
+        Table.sort(function (a, b) {
+          return b.person_salary - a.person_salary;
+        });
+        B(Table);
+      }
+    }
+
+    function byRole() {
+      let roles = document.querySelector("#role").value;
+
+      let re = Table.filter(function (el) {
+        return el.person_role === roles;
+      });
+
+      B(re);
+    }
+
+    function B(res) {
+      document.querySelector("tbody").innerHTML = "";
+      res.forEach(function (el, i) {
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerText = el.person_name;
+
+        let td2 = document.createElement("td");
+        td2.innerText = el.person_email;
+        let td3 = document.createElement("td");
+        td3.innerText = el.person_role;
+        let td4 = document.createElement("td");
+        td4.innerText = el.person_salary;
+        let td5 = document.createElement("td");
+        td5.innerText = "bookmark";
+        td5.addEventListener("click", function () {
+          Bookmark(el, i);
+          window.location.reload();
+        });
+        tr.append(td1, td2, td3, td4, td5);
+        document.querySelector("tbody").append(tr);
+      });
+    }
+    function Bookmark(el, i) {
+      bookmarkData.push(el);
+      localStorage.setItem("mark", JSON.stringify(bookmarkData));
+      Table.splice(i, 1);
+      localStorage.setItem("jobapplied", JSON.stringify(Table));
+    }
+  </script>
+</html>
