@@ -45,6 +45,7 @@
         person_salary: document.querySelector("#salary").value,
       };
       appliedData.push(obj);
+      console.log(typeof appliedData);
 
       localStorage.setItem("jobapplied", JSON.stringify(appliedData));
     }

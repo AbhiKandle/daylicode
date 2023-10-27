@@ -1,0 +1,19 @@
+#nav{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+     background-color: aquamarine;
+    
+ }
+
+ #container{
+   
+    margin-top: 50px
+}
+
+
+#container>div>img{
+    width: 25%;
+}
+
+

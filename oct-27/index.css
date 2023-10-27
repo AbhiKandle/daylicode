@@ -1,0 +1,30 @@
+#nav{
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+    background-color: aquamarine;
+   
+}
+
+
+#container{
+   
+    width: 40%;
+    margin: auto;
+    margin-top: 50px
+}
+
+#form{
+   display: flex;
+   flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+
+#form>input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
